@@ -14,7 +14,6 @@ import com.jjep.rxe.ui.main.viewmodel.MainViewModel
 import com.jjep.rxe.ui.main.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
 import java.net.InetAddress
-import java.net.UnknownHostException
 import javax.inject.Inject
 import kotlin.concurrent.thread
 
@@ -35,7 +34,7 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
         component.inject(this)
         rv_posts.adapter = adapter
 
-        thread { checkHasConnectivity() }
+        thread { if (hasNoConnectivity()) showSnackbar() }
         listen()
     }
 
@@ -58,14 +57,11 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
         error?.show()
     }
 
-    private fun checkHasConnectivity(): Boolean {
+    private fun hasNoConnectivity(): Boolean {
         try {
-            val address = InetAddress.getByName("http://www.google.com")
-            return "$address" != ""
-        } catch (e: UnknownHostException) {
-            showSnackbar()
-        }
+            return InetAddress.getByName("www.google.com").equals("")
+        } catch (e: Exception) { }
 
-        return false
+        return true
     }
 }
