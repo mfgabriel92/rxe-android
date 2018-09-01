@@ -6,5 +6,5 @@ import com.jjep.rxe.db.entity.Post
 class MainLocalData(private val database: RxeDatabase) {
     fun fetchPosts() = database.postDao().fetchAll()
 
-    fun insert(vararg posts: Post) = database.postDao().insert(*posts)
+    fun insert(posts: List<Post>) = database.postDao().insert(posts)
 }

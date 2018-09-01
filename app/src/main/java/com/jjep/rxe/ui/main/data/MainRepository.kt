@@ -2,7 +2,6 @@ package com.jjep.rxe.ui.main.data
 
 import com.jjep.rxe.db.entity.Post
 import com.jjep.rxe.ext.addTo
-import com.jjep.rxe.network.Repository
 import com.jjep.rxe.network.Response
 import com.jjep.rxe.network.failed
 import com.jjep.rxe.network.success
@@ -16,17 +15,13 @@ class MainRepository(
     private val remote: MainRemoteData,
     private val local: MainLocalData,
     private val compositeDisposable: CompositeDisposable
-) : Repository<Post> {
-    override val outcome = PublishSubject.create<Response<List<Post>>>()
+) {
+    val outcome = PublishSubject.create<Response<List<Post>>>()
 
-    override fun fetchAll() {
-        Observable.fromCallable { local.fetchPosts() }
-            .doOnNext {
-                remote.fetchPosts().concatMap { posts ->
-                    local.insert(*posts.toTypedArray())
-                    Observable.just(posts)
-                }
-            }
+    fun fetchPosts() {
+        remote.fetchPosts()
+            .doOnNext { posts -> local.insert(posts) }
+            .onErrorResumeNext { _: Throwable -> Observable.fromCallable { local.fetchPosts() } }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(
