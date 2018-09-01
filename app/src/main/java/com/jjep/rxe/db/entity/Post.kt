@@ -11,6 +11,9 @@ data class Post(
     @SerializedName("id")
     val id: Int,
 
+    @SerializedName("image")
+    val image: String,
+
     @SerializedName("title")
     val title: String,
 

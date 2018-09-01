@@ -5,12 +5,13 @@ import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.jjep.rxe.R
 import com.jjep.rxe.db.entity.Post
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_post.view.*
-import java.util.*
 
-class MainActivityAdapter : RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder>() {
+class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder>() {
     private var posts = emptyList<Post>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainActivityViewHolder {
@@ -41,8 +42,9 @@ class MainActivityAdapter : RecyclerView.Adapter<MainActivityAdapter.MainActivit
     inner class MainActivityViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(post: Post) {
             with(post) {
+                picasso.load(image).fit().centerCrop().into(itemView.img_post_image)
                 itemView.tv_post_title.text = title
-                itemView.tv_post_created_at.text = createdAt.toString()
+                itemView.tv_post_created_at.text = TimeAgo.using(createdAt.time)
                 itemView.tv_post_body.text = body
             }
         }
