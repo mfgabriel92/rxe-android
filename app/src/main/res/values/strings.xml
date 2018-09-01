@@ -2,4 +2,7 @@
     <string name="app_name">Rxe</string>
 
     <string name="showing_offline_data">Showing offline data due to lack of connectivity</string>
+    <string name="btn_label_like">Like</string>
+    <string name="btn_label_comment">Comment</string>
+    <string name="btn_label_share">Share</string>
 </resources>
