@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:context=".ui.detail.PostDetailActivity">
+
+        <ImageView
+            android:id="@+id/img_post_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="150dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_post_detail_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="26sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_post_detail_image"
+            tools:text="Lorem Ipsum" />
+
+        <TextView
+            android:id="@+id/tv_post_detail_created_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginTop="8dp"
+            android:maxLines="1"
+            android:textSize="12sp"
+            app:layout_constraintBottom_toTopOf="@+id/tv_post_detail_body"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/img_post_detail_image"
+            tools:text="3 hours ago" />
+
+        <TextView
+            android:id="@+id/tv_post_detail_body"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_detail_title"
+            tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus sem nulla. Curabitur nibh ex, venenatis id sodales a, dictum nec diam. Curabitur leo orci, ornare aliquet neque a, fermentum vulputate nisl. Suspendisse ante turpis, ornare eget lorem eu, gravida posuere lacus. Integer rhoncus ante tristique posuere varius. Donec sed convallis ipsum, ut varius odio. Aenean hendrerit finibus quam vitae commodo. Fusce dapibus ex varius nisl semper, nec mattis ipsum scelerisque. Sed sit amet tempus est, eu dapibus erat.
+
+Vivamus risus felis, ultrices vel luctus sit amet, efficitur a purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam interdum fermentum risus sodales scelerisque. Nulla et ultrices elit. Vivamus tristique pulvinar nibh ac dignissim. Pellentesque leo ligula, varius sed nibh sed, tincidunt tincidunt lorem. Cras diam justo, malesuada id volutpat nec, aliquam et magna.
+
+Proin non lorem porttitor, laoreet dolor a, gravida tellus. Donec porta libero quis condimentum sollicitudin. Nunc consectetur efficitur ante, eu vestibulum nibh fermentum nec. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Suspendisse aliquet ligula sed dapibus bibendum. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Suspendisse venenatis facilisis mi facilisis tempus. Aliquam eu sollicitudin mauris. Vivamus id nunc quis magna eleifend consectetur. Praesent auctor pellentesque faucibus. Aenean facilisis urna nisi, in venenatis orci laoreet nec. Morbi et ipsum lectus.
+
+Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Vestibulum pellentesque nulla felis, vitae consequat ante facilisis eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Etiam posuere mauris luctus magna lobortis, nec imperdiet magna luctus. Vestibulum vel mi eu sem efficitur gravida tincidunt ut purus. Quisque nec nisl nec lectus bibendum sagittis vel sit amet dolor. Integer tempus bibendum quam, sed egestas mi vehicula nec. Morbi condimentum feugiat neque, ac volutpat velit feugiat ac. Aenean facilisis risus arcu, at tempus purus tempor sit amet. Suspendisse vitae tortor eu felis pulvinar tempor. Nulla sit amet nisi ut enim fringilla euismod. Phasellus luctus leo augue, vitae ultricies nulla vestibulum ac.
+
+Integer vitae congue arcu. Suspendisse rutrum orci vel risus varius pulvinar. Nunc varius commodo libero, sit amet lobortis lacus mollis nec. Quisque egestas quam sit amet risus interdum rutrum. In odio dolor, vehicula non quam sed, congue hendrerit ex. Interdum et malesuada fames ac ante ipsum primis in faucibus. Curabitur hendrerit convallis cursus. Maecenas in ligula mi. Cras euismod tincidunt maximus. Maecenas aliquam ex id ornare dignissim. Phasellus id vulputate urna. Nullam ac felis nisi." />
+
+    </android.support.constraint.ConstraintLayout>
+</ScrollView>
