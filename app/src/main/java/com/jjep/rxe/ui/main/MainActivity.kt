@@ -3,13 +3,14 @@ package com.jjep.rxe.ui.main
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
 import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.widget.Toast
 import com.jjep.rxe.R
 import com.jjep.rxe.db.entity.Post
 import com.jjep.rxe.network.Response
+import com.jjep.rxe.ui.detail.PostDetailActivity
 import com.jjep.rxe.ui.main.viewmodel.MainViewModel
 import com.jjep.rxe.ui.main.viewmodel.MainViewModelFactory
 import kotlinx.android.synthetic.main.activity_main.*
@@ -32,6 +33,7 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
         setContentView(R.layout.activity_main)
 
         component.inject(this)
+        adapter.onPostClickListener = this
         viewModel.fetchPosts()
 
         rv_posts.adapter = adapter
@@ -42,7 +44,12 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
     }
 
     override fun onPostClick(post: Post) {
-        Toast.makeText(context, post.title, Toast.LENGTH_SHORT).show()
+        val intent = Intent(context, PostDetailActivity::class.java)
+        intent.putExtra("EXTRA_POST_TITLE", post.title)
+        intent.putExtra("EXTRA_POST_CREATED_AT", post.createdAt)
+        intent.putExtra("EXTRA_POST_BODY", post.body)
+
+        startActivity(intent)
     }
 
     private fun listen() {

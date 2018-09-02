@@ -1,7 +1,6 @@
 package com.jjep.rxe.ui.main
 
 import android.support.v7.widget.RecyclerView
-import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,6 +12,7 @@ import kotlinx.android.synthetic.main.item_post.view.*
 
 class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<MainActivityAdapter.MainActivityViewHolder>() {
     private var posts = emptyList<Post>()
+    var onPostClickListener: OnPostClickListener? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainActivityViewHolder {
         return MainActivityViewHolder(LayoutInflater.from(parent.context).inflate(R.layout.item_post, parent, false))
@@ -22,7 +22,7 @@ class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<M
         holder.bind(posts[position])
 
         holder.itemView.setOnClickListener { view ->
-            Log.d("MainActivityAdapter", view.toString())
+            with (view) { onPostClickListener?.onPostClick(posts[position]) }
         }
     }
 

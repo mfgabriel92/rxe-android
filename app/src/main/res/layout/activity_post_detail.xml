@@ -11,14 +11,6 @@
         android:layout_height="wrap_content"
         tools:context=".ui.detail.PostDetailActivity">
 
-        <ImageView
-            android:id="@+id/img_post_detail_image"
-            android:layout_width="match_parent"
-            android:layout_height="150dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
         <TextView
             android:id="@+id/tv_post_detail_title"
             android:layout_width="wrap_content"
@@ -27,26 +19,30 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:textSize="26sp"
+            android:textColor="#777"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_post_detail_image"
+            app:layout_constraintTop_toTopOf="parent"
             tools:text="Lorem Ipsum" />
 
         <TextView
             android:id="@+id/tv_post_detail_created_at"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="24dp"
             android:layout_marginEnd="8dp"
+            android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginStart="8dp"
             android:maxLines="1"
             android:textSize="12sp"
+            android:textColor="#aaa"
             app:layout_constraintBottom_toTopOf="@+id/tv_post_detail_body"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_post_detail_image"
+            app:layout_constraintEnd_toEndOf="@+id/tv_post_detail_title"
+            app:layout_constraintStart_toStartOf="@+id/tv_post_detail_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_detail_title"
             tools:text="3 hours ago" />
 
         <TextView
@@ -57,11 +53,13 @@
             android:layout_marginLeft="8dp"
             android:layout_marginRight="8dp"
             android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="24dp"
             android:textSize="13sp"
+            android:textColor="#aaa"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tv_post_detail_title"
+            app:layout_constraintTop_toBottomOf="@+id/tv_post_detail_created_at"
+            tools:layout_editor_absoluteY="51dp"
             tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc faucibus sem nulla. Curabitur nibh ex, venenatis id sodales a, dictum nec diam. Curabitur leo orci, ornare aliquet neque a, fermentum vulputate nisl. Suspendisse ante turpis, ornare eget lorem eu, gravida posuere lacus. Integer rhoncus ante tristique posuere varius. Donec sed convallis ipsum, ut varius odio. Aenean hendrerit finibus quam vitae commodo. Fusce dapibus ex varius nisl semper, nec mattis ipsum scelerisque. Sed sit amet tempus est, eu dapibus erat.
 
 Vivamus risus felis, ultrices vel luctus sit amet, efficitur a purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam interdum fermentum risus sodales scelerisque. Nulla et ultrices elit. Vivamus tristique pulvinar nibh ac dignissim. Pellentesque leo ligula, varius sed nibh sed, tincidunt tincidunt lorem. Cras diam justo, malesuada id volutpat nec, aliquam et magna.
