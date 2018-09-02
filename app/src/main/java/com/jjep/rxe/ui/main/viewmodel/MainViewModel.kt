@@ -21,8 +21,6 @@ class MainViewModel(private val repository: MainRepository, private val composit
     }
 
     fun fetchPosts() {
-        if (posts.value == null) {
-            repository.fetchPosts()
-        }
+        repository.fetchPosts()
     }
 }

@@ -42,7 +42,6 @@ class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<M
     inner class MainActivityViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(post: Post) {
             with(post) {
-                picasso.load(image).fit().centerCrop().into(itemView.img_post_image)
                 itemView.tv_post_title.text = title
                 itemView.tv_post_created_at.text = TimeAgo.using(createdAt.time)
                 itemView.tv_post_body.text = body

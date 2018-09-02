@@ -1,109 +1,40 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginBottom="8dp"
+    android:padding="16dp"
     android:background="@android:color/white"
     android:elevation="2dp">
 
-    <ImageView
-        android:id="@+id/img_post_image"
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
     <TextView
         android:id="@+id/tv_post_title"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:textSize="18sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_post_image"
+        android:textSize="20sp"
+        android:layout_marginBottom="4dp"
+        android:textColor="#555"
+        android:maxLines="1"
+
         tools:text="Lorem Ipsum" />
 
     <TextView
         android:id="@+id/tv_post_created_at"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_post_title"
         android:layout_marginBottom="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginTop="8dp"
-        android:maxLines="1"
         android:textSize="12sp"
-        app:layout_constraintBottom_toTopOf="@+id/tv_post_body"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/img_post_image"
         tools:text="3 hours ago" />
 
     <TextView
         android:id="@+id/tv_post_body"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_below="@+id/tv_post_created_at"
         android:maxLines="3"
-        android:textSize="13sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_post_title"
+        android:textSize="14sp"
         tools:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. In et scelerisque erat. Etiam ut efficitur turpis. Nam varius urna turpis, at volutpat ipsum convallis et. Fusce et malesuada nulla." />
-
-    <View
-        android:id="@+id/divider"
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:background="#ddd"
-        app:layout_constraintTop_toBottomOf="@id/tv_post_body"/>
-
-    <Button
-        style="@style/PostButtons"
-        android:id="@+id/btn_like_post"
-        android:drawableStart="@drawable/ic_like"
-        android:drawableLeft="@drawable/ic_like"
-        android:text="@string/btn_label_like"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btn_comment_post"
-        app:layout_constraintStart_toEndOf="@+id/btn_comment_post"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <Button
-        style="@style/PostButtons"
-        android:id="@+id/btn_comment_post"
-        android:drawableStart="@drawable/ic_comment"
-        android:drawableLeft="@drawable/ic_comment"
-        android:text="@string/btn_label_comment"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@id/btn_share_post"
-        app:layout_constraintStart_toEndOf="@+id/btn_like_post"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-    <Button
-        style="@style/PostButtons"
-        android:id="@+id/btn_share_post"
-        android:drawableStart="@drawable/ic_share"
-        android:drawableLeft="@drawable/ic_share"
-        android:text="@string/btn_label_share"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btn_comment_post"
-        app:layout_constraintTop_toBottomOf="@+id/divider" />
-
-</android.support.constraint.ConstraintLayout>
+</RelativeLayout>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<android.support.v4.widget.SwipeRefreshLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main_context"
+    android:id="@+id/srl_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#eee"
+    android:padding="8dp"
     tools:context=".ui.main.MainActivity">
 
     <android.support.v7.widget.RecyclerView
@@ -17,4 +18,4 @@
         android:overScrollMode="never"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         tools:listitem="@layout/item_post"/>
-</android.support.constraint.ConstraintLayout>
+</android.support.v4.widget.SwipeRefreshLayout>

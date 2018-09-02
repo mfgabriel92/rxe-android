@@ -12,14 +12,14 @@ fun <T> PublishSubject<T>.toLiveData(compositeDisposable: CompositeDisposable): 
 }
 
 fun <T> PublishSubject<Response<T>>.failed(e: Throwable) {
-    with(this){
+    with(this) {
         loading(false)
         onNext(Response.failure(e))
     }
 }
 
 fun <T> PublishSubject<Response<T>>.success(t: T) {
-    with(this){
+    with(this) {
         loading(false)
         onNext(Response.success(t))
     }

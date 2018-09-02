@@ -32,7 +32,10 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
         setContentView(R.layout.activity_main)
 
         component.inject(this)
+        viewModel.fetchPosts()
+
         rv_posts.adapter = adapter
+        srl_main.setOnRefreshListener { viewModel.fetchPosts() }
 
         thread { if (hasNoConnectivity()) showSnackbar() }
         listen()
@@ -43,9 +46,9 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
     }
 
     private fun listen() {
-        viewModel.fetchPosts()
         viewModel.posts.observe(this, Observer<Response<List<Post>>> { result ->
             when (result) {
+                is Response.Progress -> { srl_main.isRefreshing = result.loading; }
                 is Response.Success -> { adapter.setData(result.data) }
             }
         })
