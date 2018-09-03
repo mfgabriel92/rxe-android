@@ -4,9 +4,8 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.github.marlonlom.utilities.timeago.TimeAgo
 import com.jjep.rxe.R
-import com.jjep.rxe.db.entity.Post
+import com.jjep.rxe.db.entity.post.Post
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_post.view.*
 
@@ -42,9 +41,9 @@ class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<M
     inner class MainActivityViewHolder(view: View) : RecyclerView.ViewHolder(view) {
         fun bind(post: Post) {
             with(post) {
-                itemView.tv_post_title.text = title
-                itemView.tv_post_created_at.text = TimeAgo.using(createdAt.time)
-                itemView.tv_post_body.text = body
+                itemView.tv_post_title.text = title.title
+                itemView.tv_post_date.text = date
+                itemView.tv_post_excerpt.text = excerpt.rendered
             }
         }
     }

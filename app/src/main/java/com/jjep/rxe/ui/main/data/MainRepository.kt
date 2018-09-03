@@ -1,6 +1,7 @@
 package com.jjep.rxe.ui.main.data
 
-import com.jjep.rxe.db.entity.Post
+import android.util.Log
+import com.jjep.rxe.db.entity.post.Post
 import com.jjep.rxe.ext.addTo
 import com.jjep.rxe.network.Response
 import com.jjep.rxe.network.failed
@@ -21,7 +22,7 @@ class MainRepository(
     fun fetchPosts() {
         remote.fetchPosts()
             .doOnNext { posts -> local.insert(posts) }
-            .onErrorResumeNext { _: Throwable -> Observable.fromCallable { local.fetchPosts() } }
+            .onErrorResumeNext { e: Throwable -> Log.d("MainRepository", e.message); Observable.fromCallable { local.fetchPosts() } }
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(

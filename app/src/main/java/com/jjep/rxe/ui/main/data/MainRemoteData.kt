@@ -1,7 +1,7 @@
 package com.jjep.rxe.ui.main.data
 
-import com.jjep.rxe.network.RxeApi
+import com.jjep.rxe.network.RxeService
 
-class MainRemoteData(private val api: RxeApi) {
-    fun fetchPosts() = api.fetchPosts()
+class MainRemoteData(private val service: RxeService) {
+    fun fetchPosts() = service.fetchPosts()
 }

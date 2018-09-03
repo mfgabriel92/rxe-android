@@ -8,7 +8,7 @@ import android.os.Bundle
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import com.jjep.rxe.R
-import com.jjep.rxe.db.entity.Post
+import com.jjep.rxe.db.entity.post.Post
 import com.jjep.rxe.network.Response
 import com.jjep.rxe.ui.detail.PostDetailActivity
 import com.jjep.rxe.ui.main.viewmodel.MainViewModel
@@ -45,9 +45,9 @@ class MainActivity : AppCompatActivity(), MainActivityAdapter.OnPostClickListene
 
     override fun onPostClick(post: Post) {
         val intent = Intent(context, PostDetailActivity::class.java)
-        intent.putExtra("EXTRA_POST_TITLE", post.title)
-        intent.putExtra("EXTRA_POST_CREATED_AT", post.createdAt)
-        intent.putExtra("EXTRA_POST_BODY", post.body)
+//        intent.putExtra("EXTRA_POST_TITLE", post.title)
+//        intent.putExtra("EXTRA_POST_CREATED_AT", post.date)
+//        intent.putExtra("EXTRA_POST_BODY", post.content)
 
         startActivity(intent)
     }

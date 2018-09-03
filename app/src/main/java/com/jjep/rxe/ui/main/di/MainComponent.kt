@@ -1,6 +1,6 @@
 package com.jjep.rxe.ui.main.di
 
-import com.jjep.rxe.network.RxeApi
+import com.jjep.rxe.network.RxeService
 import com.jjep.rxe.db.RxeDatabase
 import com.jjep.rxe.di.AppComponent
 import com.jjep.rxe.ui.main.MainActivity
@@ -11,5 +11,5 @@ import dagger.Component
 interface MainComponent {
     fun inject(mainActivity: MainActivity)
     fun database(): RxeDatabase
-    fun api(): RxeApi
+    fun service(): RxeService
 }

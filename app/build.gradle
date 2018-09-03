@@ -24,7 +24,7 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
     buildTypes.each {
-        it.buildConfigField "String", "API_BASE_URL", "\"http://mfgabriel92.pythonanywhere.com\""
+        it.buildConfigField "String", "API_BASE_URL", "\"http://skillpoint.com.br/wp-json/wp/v2/\""
     }
 }
 

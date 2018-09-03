@@ -24,7 +24,7 @@
             tools:text="Lorem Ipsum" />
 
         <TextView
-            android:id="@+id/tv_post_created_at"
+            android:id="@+id/tv_post_date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/tv_post_title"
@@ -34,10 +34,10 @@
             tools:text="3 hours ago" />
 
         <TextView
-            android:id="@+id/tv_post_body"
+            android:id="@+id/tv_post_excerpt"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/tv_post_created_at"
+            android:layout_below="@+id/tv_post_date"
             android:maxLines="3"
             android:textSize="14sp"
             android:textColor="#aaa"

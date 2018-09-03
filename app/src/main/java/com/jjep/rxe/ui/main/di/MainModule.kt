@@ -3,7 +3,7 @@ package com.jjep.rxe.ui.main.di
 import android.arch.persistence.room.Room
 import android.content.Context
 import com.jjep.rxe.db.RxeDatabase
-import com.jjep.rxe.network.RxeApi
+import com.jjep.rxe.network.RxeService
 import com.jjep.rxe.ui.main.MainActivityAdapter
 import com.jjep.rxe.ui.main.data.MainLocalData
 import com.jjep.rxe.ui.main.data.MainRemoteData
@@ -32,7 +32,7 @@ class MainModule {
 
     @Provides
     @PostScope
-    fun provideRemoteData(api: RxeApi) = MainRemoteData(api)
+    fun provideRemoteData(service: RxeService) = MainRemoteData(service)
 
     @Provides
     @PostScope
@@ -48,5 +48,5 @@ class MainModule {
 
     @Provides
     @PostScope
-    fun provideApi(retrofit: Retrofit): RxeApi = retrofit.create(RxeApi::class.java)
+    fun provideService(retrofit: Retrofit): RxeService = retrofit.create(RxeService::class.java)
 }
