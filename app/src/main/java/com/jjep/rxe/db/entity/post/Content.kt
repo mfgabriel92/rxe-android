@@ -1,5 +1,8 @@
 package com.jjep.rxe.db.entity.post
 
+import com.google.gson.annotations.SerializedName
+
 class Content {
-    var contentText: String? = null
+    @SerializedName("rendered")
+    var content: String? = null
 }

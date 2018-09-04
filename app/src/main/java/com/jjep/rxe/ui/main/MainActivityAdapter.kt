@@ -43,7 +43,7 @@ class MainActivityAdapter(private val picasso: Picasso) : RecyclerView.Adapter<M
             with(post) {
                 itemView.tv_post_title.text = title.title
                 itemView.tv_post_date.text = date
-                itemView.tv_post_excerpt.text = excerpt.rendered
+                itemView.tv_post_excerpt.text = excerpt.excerpt
             }
         }
     }
